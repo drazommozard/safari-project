@@ -1,0 +1,127 @@
+{
+    "info": {
+        "_postman_id": "safari-project-id",
+        "name": "Safari Microservices Collection",
+        "description": "API collection for the Safari Booking Platform microservices (Tour, Hotel, Booking).",
+        "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+    },
+    "item": [
+        {
+            "name": "1. Get All Tours",
+            "request": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                    "raw": "http://localhost:8080/api/tours",
+                    "protocol": "http",
+                    "host": [
+                        "localhost"
+                    ],
+                    "port": "8080",
+                    "path": [
+                        "api",
+                        "tours"
+                    ]
+                }
+            },
+            "response": []
+        },
+        {
+            "name": "2. Search Tours",
+            "request": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                    "raw": "http://localhost:8080/api/tours/search?keyword=Mara",
+                    "protocol": "http",
+                    "host": [
+                        "localhost"
+                    ],
+                    "port": "8080",
+                    "path": [
+                        "api",
+                        "tours",
+                        "search"
+                    ],
+                    "query": [
+                        {
+                            "key": "keyword",
+                            "value": "Mara"
+                        }
+                    ]
+                }
+            },
+            "response": []
+        },
+        {
+            "name": "3. Get All Hotels",
+            "request": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                    "raw": "http://localhost:8081/api/hotels",
+                    "protocol": "http",
+                    "host": [
+                        "localhost"
+                    ],
+                    "port": "8081",
+                    "path": [
+                        "api",
+                        "hotels"
+                    ]
+                }
+            },
+            "response": []
+        },
+        {
+            "name": "4. Create Booking",
+            "request": {
+                "method": "POST",
+                "header": [
+                    {
+                        "key": "Content-Type",
+                        "value": "application/json",
+                        "type": "text"
+                    }
+                ],
+                "body": {
+                    "mode": "raw",
+                    "raw": "{\n    \"tourId\": 1,\n    \"hotelId\": null,\n    \"customerName\": \"John Doe\",\n    \"bookingDate\": \"2023-12-25\",\n    \"status\": \"PENDING\"\n}"
+                },
+                "url": {
+                    "raw": "http://localhost:8082/api/booking",
+                    "protocol": "http",
+                    "host": [
+                        "localhost"
+                    ],
+                    "port": "8082",
+                    "path": [
+                        "api",
+                        "booking"
+                    ]
+                }
+            },
+            "response": []
+        },
+        {
+            "name": "5. Get All Bookings",
+            "request": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                    "raw": "http://localhost:8082/api/booking",
+                    "protocol": "http",
+                    "host": [
+                        "localhost"
+                    ],
+                    "port": "8082",
+                    "path": [
+                        "api",
+                        "booking"
+                    ]
+                }
+            },
+            "response": []
+        }
+    ]
+}
